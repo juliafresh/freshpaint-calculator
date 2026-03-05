@@ -6,7 +6,7 @@ function setup() {
   background(255);
 
   injectStyles();
-  createTitle("מחשבון חממת האמנים");
+  createTitle("מחשבון החממה");
 
   const wrapper = createDiv()
     .addClass("fp-wrapper")
