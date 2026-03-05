@@ -267,7 +267,7 @@ function calculateBackward() {
 
   const withoutVat = finalPrice / (1 + taxRate);
   const shipping = withoutVat >= 1801 ? 300 : 150;
-  const base = withoutVat - shipping;
+  const base = Math.round(withoutVat - shipping);
   const commission = base * commissionRate;
   const net = base - commission;
 
@@ -285,7 +285,9 @@ function calculateBackward() {
 }
 
 function money(x){
-  return `${Number(x).toFixed(2)} ש"ח`;
+  const n = Number(x);
+  const formatted = Number.isInteger(n) ? n : n.toFixed(2);
+  return `${formatted} ש"ח`;
 }
 
 function draw(){}
