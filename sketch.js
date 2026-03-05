@@ -173,6 +173,20 @@ function injectStyles() {
     .fp-strong{
       font-weight:600;
     }
+.fp-highlight{
+  background:#FFF7C2;
+  border-radius:10px;
+  padding:6px 10px;
+  font-weight:600;
+}
+
+.fp-highlight small{
+  display:block;
+  font-size:12px;
+  font-weight:500;
+  color:#555;
+  margin-top:2px;
+}
 
 /* Remove spinners in Chrome/Safari/Edge */
 .fp-input::-webkit-outer-spin-button,
@@ -260,7 +274,10 @@ function calculateBackward() {
   resultDivBackward.style("display", "block").html(`
     <div class="fp-row fp-strong"><span>מחיר סופי</span><span>${money(finalPrice)}</span></div>
     <div class="fp-row"><span>מחיר ללא מע״מ</span><span>${money(withoutVat)}</span></div>
-    <div class="fp-row"><span>מחיר בסיס ללא שינוע וללא מע״מ</span><span>${money(base)}</span></div>
+<div class="fp-row fp-highlight">
+  <span>מחיר בסיס ללא שינוע וללא מע״מ<br><small>זה הסכום להזנה במערכת</small></span>
+  <span>${money(base)}</span>
+</div>
     <br>
     <div class="fp-row"><span>דמי גבייה (25%)</span><span>${money(commission)}</span></div>
     <div class="fp-row fp-strong"><span>הכנסה נטו</span><span>${money(net)}</span></div>
