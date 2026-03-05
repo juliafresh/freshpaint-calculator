@@ -40,7 +40,7 @@ function setup() {
   // =========================
   const card2 = createDiv().parent(wrapper).addClass("fp-card");
   createElement("div", "חישוב אחורה").parent(card2).addClass("fp-card-title");
-  createElement("div", "מחיר עבודה סופי").parent(card2).addClass("fp-label");
+  createElement("div", "מחיר עבודה סופי ללקוח").parent(card2).addClass("fp-label");
 
   finalPriceInput = createInput("")
     .parent(card2)
