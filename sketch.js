@@ -76,21 +76,29 @@ function injectStyles() {
       -webkit-font-smoothing: antialiased;
     }
 
-    .fp-wrapper{
-      width:min(980px, calc(100% - 32px));
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-      direction:rtl;
-    }
+.fp-input{
+  text-align: right;
+  direction: rtl;
+} 
 
-    @media (max-width:820px){
-      .fp-wrapper{
-        grid-template-columns:1fr;
-        gap:16px;
-      }
-    }
+.fp-wrapper{
+  width: calc(100% - 32px);
+  margin: 0 auto;                 /* centers the whole grid */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 20px;
+  direction: rtl;
+  justify-content: center;        /* centers the grid when there’s extra space */
+  align-items: start;
+}
+
+@media (max-width: 820px){
+  .fp-wrapper{
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: calc(100% - 24px);
+  }
+}
 
     .fp-card{
       background:#fff;
@@ -165,7 +173,26 @@ function injectStyles() {
     .fp-strong{
       font-weight:600;
     }
+
+/* Remove spinners in Chrome/Safari/Edge */
+.fp-input::-webkit-outer-spin-button,
+.fp-input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinners in Firefox */
+.fp-input[type="number"]{
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.fp-input{
+  text-align: right;
+  direction: rtl;
+}
     `
+    
   );
 }
 
